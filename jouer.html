@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#192a27">
+<title>Skribes · Compagnon de partie</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="top"><a href="./" aria-label="Accueil Skribes">Skribes</a><span id="room" hidden></span></header>
+<main>
+  <p id="notice" role="status" aria-live="polite" hidden></p>
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Compagnon de partie</p>
+      <h1>Skribes</h1>
+      <p>Ta fiche, tes runes et l’encre de la table.</p>
+    </div>
+    <div class="welcome">
+      <button id="create" class="primary" type="button">Créer une partie</button>
+      <form id="join">
+        <label for="code">Code de partie</label>
+        <div class="inline">
+          <input id="code" name="code" placeholder="Ex. A17B24C9" maxlength="8" autocapitalize="characters" autocomplete="off" required pattern="[A-Fa-f0-9]{8}">
+          <button type="submit">Rejoindre</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section id="selection" hidden>
+    <div class="section-intro"><p class="eyebrow">Partie multijoueur</p><h1>Choisis ton personnage</h1><p>Chaque personnage peut être choisi une seule fois par partie.</p></div>
+    <div id="choices"></div>
+  </section>
+  <div id="game" hidden>
+    <section class="character-card">
+      <div id="portrait" class="portrait"></div>
+      <div><p class="eyebrow">Ta fiche</p><h1 id="character"></h1><p id="description"></p><a id="original-card" target="_blank" rel="noopener">Voir la carte originale</a></div>
+    </section>
+    <div class="game-grid">
+      <section class="panel">
+        <h2>Runes</h2>
+        <div class="level" role="group" aria-label="Niveau du personnage"><button data-action="level" data-level="1">Niveau 1</button><button data-action="level" data-level="2">Niveau 2</button></div>
+        <p id="roll-summary" aria-live="polite">Six runes, une chance sur deux chacune de montrer sa face glyphe.</p>
+        <div id="runes" class="runes"></div>
+        <button class="primary" data-action="roll">Lancer les 6 runes</button>
+      </section>
+      <section class="panel">
+        <h2>Pouvoir du personnage</h2>
+        <p id="character-power"></p>
+        <h3>Charges du pouvoir</h3>
+        <div id="pigments" class="pigments"></div>
+        <button data-action="reset">Recharger les 3 charges · 3 encre</button>
+      </section>
+      <section class="panel">
+        <h2>Pouvoir du pigment</h2>
+        <p id="pigment-power"></p>
+      </section>
+      <section class="panel">
+        <p class="eyebrow">Commun à la table</p><h2>Points d’encre</h2>
+        <div class="counter">
+          <button data-action="ink" data-delta="-1" aria-label="Retirer un point d’encre">−</button>
+          <output id="ink-value" aria-live="polite">—</output>
+          <button data-action="ink" data-delta="1" aria-label="Ajouter un point d’encre">+</button>
+        </div>
+        <form id="ink-form" class="inline">
+          <input name="value" type="number" step="1" required aria-label="Total des points d’encre" placeholder="Total d’encre">
+          <button type="submit">Définir</button>
+        </form>
+      </section>
+      <section class="panel">
+        <p class="eyebrow">Commun à la table</p><h2>PV des créatures</h2>
+        <ul id="creatures"></ul>
+        <form id="creature-form">
+          <div class="inline">
+            <input name="name" maxlength="60" required placeholder="Nom de la créature" aria-label="Nom de la créature">
+            <input name="value" type="number" step="1" required placeholder="PV" aria-label="PV de départ">
+          </div>
+          <button type="submit">Ajouter une créature</button>
+        </form>
+      </section>
+    </div>
+  </div>
+  <footer id="session" hidden><button id="back" type="button">Retour à l’accueil</button></footer>
+</main>
+</body>
+</html>
