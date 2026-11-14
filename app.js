@@ -155,7 +155,12 @@ async function perform(endpoint, data) {
   busy = true;
   notice();
   try {
-    const next = await request(endpoint, data);
+    let next = await request(endpoint, data);
+    // Compatible avec la fonction Supabase déjà déployée : initialiser le niveau
+    // avant d’afficher la fiche après le choix du personnage.
+    if (data?.action === 'choose') {
+      next = await request(endpoint, { action: 'level', level: 1 });
+    }
     code = next.code;
     localStorage.setItem('skrib-room', code);
     connectionFailed = false;
