@@ -184,7 +184,8 @@ get('join').addEventListener('submit', event => {
 });
 get('back').addEventListener('click', () => {
   if (busy) return;
-  if (code) get('code').value = code;
+  get('code').value = '';
+  localStorage.removeItem('skrib-create');
   code = '';
   state = null;
   localStorage.removeItem('skrib-room');

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#192a27">
 <title>Skribes · Compagnon de partie</title>
-<link rel="stylesheet" href="./style.css">
-<script type="module" src="./app.js"></script>
+<link rel="stylesheet" href="./style.css?v=quitter-1">
+<script type="module" src="./app.js?v=quitter-1"></script>
 </head>
 <body>
-<header class="top"><a href="./" aria-label="Accueil Skribes">Skribes</a><span id="room" hidden></span></header>
+<header class="top"><a href="./" aria-label="Accueil Skribes">Skribes</a><div id="session" class="session" hidden><span id="room" hidden></span><button id="back" type="button">Quitter la partie</button></div></header>
 <main>
   <p id="notice" role="status" aria-live="polite" hidden></p>
   <section id="home" class="hero">
@@ -82,7 +82,6 @@
       </section>
     </div>
   </div>
-  <footer id="session" hidden><button id="back" type="button">Retour à l’accueil</button></footer>
 </main>
 </body>
 </html>

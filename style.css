@@ -64,3 +64,6 @@ footer{margin-top:16px}
 .rune [data-glyph="P"]{--glyph-x:13.7%}
 .rune [data-glyph="D"]{--glyph-x:20.8%}
 .rune [data-glyph="B"]{--glyph-x:28.3%}
+
+.session{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+.session button{font-size:.8rem}
