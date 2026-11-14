@@ -36,7 +36,7 @@
   <div id="game" hidden>
     <section class="character-card">
       <div id="portrait" class="portrait"></div>
-      <div><p class="eyebrow">Ta fiche</p><h1 id="character"></h1><p id="description"></p><p id="character-power"></p><a id="original-card" target="_blank" rel="noopener">Voir la carte originale</a></div>
+      <div><p class="eyebrow">Ta fiche</p><h1 id="character"></h1><p id="description"></p><a id="original-card" target="_blank" rel="noopener">Voir la carte originale</a></div>
     </section>
     <div class="game-grid">
       <section class="panel">
@@ -47,11 +47,15 @@
         <button class="primary" data-action="roll">Lancer les 6 runes</button>
       </section>
       <section class="panel">
-        <h2>Pouvoir du pigment</h2>
-        <p id="pigment-power"></p>
+        <h2>Pouvoir du personnage</h2>
+        <p id="character-power"></p>
         <h3>Charges du pouvoir</h3>
         <div id="pigments" class="pigments"></div>
         <button data-action="reset">Recharger les 3 charges · 3 encre</button>
+      </section>
+      <section class="panel">
+        <h2>Pouvoir du pigment</h2>
+        <p id="pigment-power"></p>
       </section>
       <section class="panel">
         <p class="eyebrow">Commun à la table</p><h2>Points d’encre</h2>
